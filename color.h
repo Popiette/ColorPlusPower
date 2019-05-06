@@ -23,6 +23,7 @@ const char * color(enum ColorIndex);
 const char * background(enum ColorIndex);
 
 const char * effect(enum EffectIndex);
+const char * reset_effect(enum EffectIndex);
 
 const char * clear(enum ClearIndex);
 
