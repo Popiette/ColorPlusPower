@@ -2,6 +2,8 @@
 using namespace std;
 
 #include "color.h"
+#include "effect.h"
+#include "terminal.h"
 
 void test()
 {
