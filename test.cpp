@@ -17,7 +17,7 @@ void test()
 					"light_yellow", "light_blue", 
 					"light_magenta", "light_cyan", "white"
 				};
-	cout << "Colors available :" << endl;
+	cout << "Colors :" << endl;
 	for(unsigned int i = 0; i < 17; ++i)
 	{
 		cout << color(DEFAULT) << i << " : " 
@@ -32,15 +32,20 @@ void test()
 	
 	EffectIndex effectIndexTab[] = {BOLD, DIM, ITALIC, 
 		UNDERLINED, BLINK, INVERTED, HIDDEN, ALL};
-	cout << "Effects available :" << endl;
+
+	const char * effects[] = { "bold", "dim", "italic",
+		"underlined", "blink", "inverted", "hidden", "all"};
+
+	cout << "Effects :" << endl;
 	for(unsigned int i = 0; i < 8; ++i)
 	{
-		cout << effect(effectIndexTab[i]) << i << " : effect" 
-			<< reset_effect(effectIndexTab[i]) << endl;
+		cout << effect(effectIndexTab[i]) << i << " : "
+		       << effects[i] 
+		       << reset_effect(effectIndexTab[i]) 
+		       << endl;
 	}
 
 	cout << endl;
-
 }
 
 int main(int argc, char ** argv)
