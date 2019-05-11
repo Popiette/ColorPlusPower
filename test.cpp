@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 
-#include "color.h"
-#include "effect.h"
-#include "terminal.h"
+#include "Color.h"
+#include "Background.h"
+#include "Effect.h"
+#include "ResetEffect.h"
 
 void test()
 {
@@ -22,15 +23,15 @@ void test()
 	cout << "Colors :" << endl;
 	for(unsigned int i = 0; i < 17; ++i)
 	{
-		cout << color(DEFAULT) << i << " : " 
-			<< color(colorIndexTab[i]) << "color" 
-			<< color(DEFAULT)
-			<< "\t" << background(colorIndexTab[i]) << "color"
-			<< background(DEFAULT) << " : " << colors[i]
+		cout << Color(DEFAULT) << i << " : " 
+			<< Color(colorIndexTab[i]) << "color" 
+			<< Color(DEFAULT)
+			<< "\t" << Background(colorIndexTab[i]) << "color"
+			<< Background(DEFAULT) << " : " << colors[i]
 			<< endl;
 	}
 
-	cout << background(DEFAULT) << endl;
+	cout << Background(DEFAULT) << endl;
 	
 	EffectIndex effectIndexTab[] = {BOLD, DIM, ITALIC, 
 		UNDERLINED, BLINK, INVERTED, HIDDEN, ALL};
@@ -41,9 +42,9 @@ void test()
 	cout << "Effects :" << endl;
 	for(unsigned int i = 0; i < 8; ++i)
 	{
-		cout << effect(effectIndexTab[i]) << i << " : "
+		cout << Effect(effectIndexTab[i]) << i << " : "
 		       << effects[i] 
-		       << reset_effect(effectIndexTab[i]) 
+		       << ResetEffect(effectIndexTab[i]) 
 		       << endl;
 	}
 
