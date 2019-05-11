@@ -14,4 +14,4 @@ $(binDir)%.o : %.cpp
 	$(comp) -o $@ -c $<
 
 clean :
-	rm $(obj)
+	rm $(objfiles) test
