@@ -75,25 +75,25 @@ int main(int argc, char ** argv)
 	//Do we need to reset parameters at the end of the program ?
 	bool resetTerminal = true;
 
-	for(int i = 1; i < argc-1; ++i)
+	for(int i = 1; i < argc; ++i)
 	{
 		if(strcmp(argv[i], "--noreset") == 0)
 		{
 			resetTerminal = false;
 		}
-		else if(strcmp(argv[i], "-c") == 0)
+		else if(strcmp(argv[i], "-c") == 0 && i < argc - 1)
 		{
 			setColor(argv[++i]);	
 		}
-		else if(strcmp(argv[i], "-b") == 0)
+		else if(strcmp(argv[i], "-b") == 0 && i < argc - 1)
 		{
 			setBackground(argv[++i]);
 		}
-		else if(strcmp(argv[i], "-e") == 0)
+		else if(strcmp(argv[i], "-e") == 0 && i < argc - 1)
 		{
 			setEffect(argv[++i]);
 		}
-		else if(strcmp(argv[i], "-r") == 0)
+		else if(strcmp(argv[i], "-r") == 0 && i < argc - 1)
 		{
 			resetEffect(argv[++i]);
 		}
@@ -102,7 +102,6 @@ int main(int argc, char ** argv)
 			cout << argv[i];
 		}
 	}
-	cout << argv[argc-1]; //print last argument (the string to be echoed).
 	if(resetTerminal)
 		reset();
 
