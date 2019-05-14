@@ -74,12 +74,16 @@ int main(int argc, char ** argv)
 {
 	//Do we need to reset parameters at the end of the program ?
 	bool resetTerminal = true;
-
+	bool doEndl = true;
 	for(int i = 1; i < argc; ++i)
 	{
 		if(strcmp(argv[i], "--noreset") == 0)
 		{
 			resetTerminal = false;
+		}
+		else if(strcmp(argv[i], "--noendl") == 0)
+		{
+			doEndl = false;
 		}
 		else if(strcmp(argv[i], "-c") == 0 && i < argc - 1)
 		{
@@ -104,6 +108,6 @@ int main(int argc, char ** argv)
 	}
 	if(resetTerminal)
 		reset();
-
-	cout << endl;
+	if(doEndl)
+		cout << endl;
 }
