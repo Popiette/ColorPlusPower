@@ -55,6 +55,15 @@ void setEffect(char * strEffect)
 		cout << Effect(effectIndexTab[i]);
 }
 
+void resetEffect(char * strReset)
+{
+	int i = 0;
+	while(i < effectNumber && strcmp(strReset, effects[i]) != 0)
+	{ ++i; }
+	if(i < effectNumber)
+		cout << ResetEffect(effectIndexTab[i]);
+}
+
 int main(int argc, char ** argv)
 {
 	for(int i = 1; i < argc-1; ++i)
@@ -70,6 +79,10 @@ int main(int argc, char ** argv)
 		else if(strcmp(argv[i], "-e") == 0)
 		{
 			setEffect(argv[++i]);
+		}
+		else if(strcmp(argv[i], "-r") == 0)
+		{
+			resetEffect(argv[++i]);
 		}
 		else
 		{

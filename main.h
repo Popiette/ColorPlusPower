@@ -4,6 +4,7 @@
 void setColor(char *);
 void setBackground(char *);
 void setEffect(char *);
+void resetEffect(char *);
 
 void reset();
 
