@@ -64,6 +64,12 @@ void resetEffect(char * strReset)
 		cout << ResetEffect(effectIndexTab[i]);
 }
 
+void reset()
+{
+	cout << Color(DEFAULT) << Background(DEFAULT)
+		<< ResetEffect(ALL);
+}
+
 int main(int argc, char ** argv)
 {
 	for(int i = 1; i < argc-1; ++i)
@@ -90,6 +96,6 @@ int main(int argc, char ** argv)
 		}
 	}
 	cout << argv[argc-1]; //print last argument (the string to be echoed).
-	cout << Color(DEFAULT) << Background(DEFAULT) << ResetEffect(ALL)
-		<< endl;
+	reset();
+	cout << endl;
 }
